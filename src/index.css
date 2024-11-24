@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #06101b;
+}
+
+@layer base {
+  @font-face {
+    font-family: "satoshi-bold";
+    src: url("./assets/fonts/Satoshi-Bold.woff");
+  }
+  @font-face {
+    font-family: "satoshi-regular";
+    src: url("./assets/fonts/Satoshi-Regular.woff");
+  }
+}
