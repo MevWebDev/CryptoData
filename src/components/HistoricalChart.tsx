@@ -61,7 +61,7 @@ const HistoricalChart = ({
   return (
     <div className="p-1 relative font-satoshi-regular w-11/12 md:w-1/3 max-h-80 mx-auto mt-8 flex items-center gap-1 flex-col">
       <select
-        className="px-3 py-2 absolute left-[10%] top-[5%] rounded-lg text-white  bg-[#131a2a]"
+        className="md:px-3 md:py-2  absolute left-[15%] top-[5%] rounded-lg text-white  bg-[#4c82fb]"
         onChange={handleSetDays}
       >
         <option value="30">30</option>
@@ -78,7 +78,7 @@ const HistoricalChart = ({
               label: `${coinId.toUpperCase()} Price (${currency.toUpperCase()})`,
               data: chartData.data,
               borderColor: "#4c82fb", // Line color
-              backgroundColor: "#4c82fb", // Fill color
+              //   backgroundColor: "#4c82fb",
               tension: 0.3, // Smooth curves
               pointRadius: 0,
             },
@@ -88,7 +88,7 @@ const HistoricalChart = ({
           plugins: {
             legend: {
               labels: {
-                color: "white", // Changed text color to white
+                color: "white",
               },
             },
           },
