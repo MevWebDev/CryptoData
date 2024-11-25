@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage.tsx";
 import Homepage from "./components/Homepage.tsx";
 import CoinDetails from "./components/CoinDetails.tsx";
 import { CurrencyProvider } from "./contexts/CurrencyContext.tsx";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Analytics />
     <CurrencyProvider>
       <RouterProvider router={router} />
     </CurrencyProvider>
