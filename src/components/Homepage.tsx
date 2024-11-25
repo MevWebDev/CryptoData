@@ -69,8 +69,8 @@ function Homepage() {
         </button>
       </form>
       {coins.length > 0 ? (
-        <div className="flex flex-col justify-center w-11/12 md:w-1/2 mx-auto gap-2 mt-12">
-          <div className="coin-grid bg-[#131a2a] rounded-t-xl">
+        <div className="flex flex-col  justify-center w-11/12 md:w-1/2 mx-auto gap-2 mt-12">
+          <div className="coin-grid md:coin-grid bg-[#131a2a] rounded-t-xl">
             <p>#</p>
             <p>Coin</p>
             <p>Price</p>

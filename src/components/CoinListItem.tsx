@@ -33,22 +33,22 @@ function CoinListItem({
 
   return (
     <Link to={`/coin/${id}`} state={{ currency }}>
-      <div className="coin-grid-small coin-grid bg-[#131a2a]">
+      <div className="coin-grid text-md  bg-[#131a2a]">
         <p>{index}</p>
-        <div className="flex  gap-2">
+        <div className="flex gap-2 items-center">
           <img
             src={image}
             alt={name}
             style={{ width: "30px", height: "30px" }}
           />
 
-          <p>
-            {name}
+          <div className="flex flex-col">
+            {name}&nbsp;
             <span className="text-[#4c82fb] text-sm">
               {" "}
               {symbol.toUpperCase()}
             </span>
-          </p>
+          </div>
         </div>
 
         <p>
