@@ -11,7 +11,6 @@ import {
   Plugin,
 } from "chart.js";
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -31,7 +30,6 @@ interface HistoricalChartParams {
   setDays: (days: number) => void;
 }
 
-// Custom plugin to set the background color of the canvas
 const backgroundColorPlugin: Plugin = {
   id: "backgroundColorPlugin",
   beforeDraw: (chart) => {
@@ -39,14 +37,13 @@ const backgroundColorPlugin: Plugin = {
     if (ctx) {
       ctx.save();
       ctx.globalCompositeOperation = "destination-over";
-      ctx.fillStyle = "#131a2a"; // Set your desired background color here
+      ctx.fillStyle = "#131a2a";
       ctx.fillRect(0, 0, chart.width, chart.height);
       ctx.restore();
     }
   },
 };
 
-// Register the custom plugin
 ChartJS.register(backgroundColorPlugin);
 
 const HistoricalChart = ({
@@ -61,7 +58,7 @@ const HistoricalChart = ({
   return (
     <div className="p-1 relative font-satoshi-regular w-11/12 md:w-1/3 max-h-80 mx-auto mt-8 flex items-center gap-1 flex-col">
       <select
-        className="md:px-3 md:py-2  absolute left-[15%] top-[5%] rounded-lg text-white  bg-[#4c82fb]"
+        className="md:px-3 md:py-2  absolute left-[5%] top-[5%] rounded-lg text-white  bg-transparent"
         onChange={handleSetDays}
       >
         <option value="30">30</option>
@@ -77,9 +74,9 @@ const HistoricalChart = ({
             {
               label: `${coinId.toUpperCase()} Price (${currency.toUpperCase()})`,
               data: chartData.data,
-              borderColor: "#4c82fb", // Line color
-              //   backgroundColor: "#4c82fb",
-              tension: 0.3, // Smooth curves
+              borderColor: "#4c82fb",
+
+              tension: 0.3,
               pointRadius: 0,
             },
           ],
@@ -95,12 +92,12 @@ const HistoricalChart = ({
           scales: {
             x: {
               ticks: {
-                color: "white", // Changed text color to white
+                color: "white",
               },
             },
             y: {
               ticks: {
-                color: "white", // Changed text color to white
+                color: "white",
               },
             },
           },

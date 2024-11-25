@@ -1,8 +1,5 @@
-// src/context/CurrencyContext.tsx
-
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-// Create a context for currency
 interface CurrencyContextType {
   currency: { name: string; symbol: string };
   setCurrency: React.Dispatch<
@@ -14,7 +11,6 @@ const CurrencyContext = createContext<CurrencyContextType | undefined>(
   undefined
 );
 
-// Create a provider component
 export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
   const [currency, setCurrency] = useState({ name: "usd", symbol: "$" });
 

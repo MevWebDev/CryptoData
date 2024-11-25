@@ -41,6 +41,7 @@ function Coin() {
   const [chartData, setChartData] = useState<ChartData | null>(null);
   const [coinData, setCoinData] = useState<CoinDataFormattedProps | null>(null);
   const [days, setDays] = useState<number>(30);
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   const fetchHistoricalData = async (
     coinId: string,
@@ -52,7 +53,7 @@ function Coin() {
         `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency}&days=${days}`
       );
       const data = await response.json();
-      return data.prices; // Contains [timestamp, price] arrays
+      return data.prices;
     } catch (error) {
       console.error("Error fetching historical data:", error);
     }
@@ -62,18 +63,16 @@ function Coin() {
     const loadChartData = async () => {
       const prices = await fetchHistoricalData(coinId!, currency.name, days);
       if (prices) {
-        // Check to avoid setting invalid data
         const formattedData = formatChartData(prices);
         setChartData(formattedData);
       }
-      console.log("Api");
     };
     const formatChartData = (prices: Array<[number, number]>) => {
-      const labels = prices.map(
-        ([timestamp]) => new Date(timestamp).toLocaleDateString() // Convert timestamp to a readable date
+      const labels = prices.map(([timestamp]) =>
+        new Date(timestamp).toLocaleDateString()
       );
 
-      const data = prices.map(([, price]) => price); // Extract price data
+      const data = prices.map(([, price]) => price);
 
       return { labels, data, days };
     };
@@ -103,7 +102,7 @@ function Coin() {
             method: "GET",
             headers: {
               accept: "application/json",
-              "x-cg-demo-api-key": "CG-kiSjMT8zT2b9X8fUHXZ7XH3F",
+              "x-cg-demo-api-key": `${apiKey}`,
             },
           }
         );
@@ -115,7 +114,7 @@ function Coin() {
       }
     };
     fetchData();
-  }, [currency, coinId, days]);
+  }, [currency, coinId, days, apiKey]);
 
   if (!coinData || !chartData) return <Loading />;
 

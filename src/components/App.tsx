@@ -18,6 +18,8 @@ export default function App() {
   const [coins, setCoins] = useState<CoinProps[]>([]);
   const { currency, setCurrency } = useCurrency();
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   const handleCurrencyChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
@@ -36,7 +38,7 @@ export default function App() {
         currency = { name: "pln", symbol: "zł" };
         break;
       default:
-        currency = { name: "usd", symbol: "$" }; // default to USD if no match
+        currency = { name: "usd", symbol: "$" };
     }
     setCurrency(currency);
   };
@@ -72,7 +74,7 @@ export default function App() {
             method: "GET",
             headers: {
               accept: "application/json",
-              "x-cg-demo-api-key": "CG-kiSjMT8zT2b9X8fUHXZ7XH3F",
+              "x-cg-demo-api-key": `${apiKey}`,
             },
           }
         );
@@ -87,7 +89,7 @@ export default function App() {
     };
 
     fetchData();
-  }, [currency]);
+  }, [currency, apiKey]);
 
   const contextValue = { coins, currency, setCoins };
 
