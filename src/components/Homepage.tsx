@@ -62,7 +62,7 @@ function Homepage() {
         </datalist>
 
         <button
-          className="bg-[#4c82fb] px-3 py-2 rounded-md text-white "
+          className="bg-[#4c82fb] hover:bg-[#3573f8] font-satoshi-bold px-3 py-2 rounded-md text-white "
           type="submit"
         >
           Search

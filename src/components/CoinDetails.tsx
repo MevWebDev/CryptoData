@@ -126,7 +126,7 @@ function Coin() {
   }
 
   return (
-    <div className="flex flex-col max-h-screen ">
+    <div className="flex flex-col max-h-dvh ">
       <h1 className="text-center text-[4rem] font-satoshi-bold my-4">
         {coinData.name}
         <span className="text-[3rem] text-[#4c82fb]"> ({coinData.symbol})</span>

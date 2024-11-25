@@ -33,9 +33,9 @@ function CoinListItem({
 
   return (
     <Link to={`/coin/${id}`} state={{ currency }}>
-      <div className="coin-grid text-md  bg-[#131a2a]">
+      <div className="coin-grid text-md  bg-[#131a2a] hover:bg-[#131a2abd]">
         <p>{index}</p>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-3 items-center">
           <img
             src={image}
             alt={name}

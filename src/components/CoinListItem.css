@@ -3,18 +3,19 @@
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
   gap: 10px;
   align-items: center;
-  padding: 1rem;
   margin: 0;
+  justify-items: start;
+  padding: 1rem;
 }
 
 @media (max-width: 768px) {
   .coin-grid {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1.5fr 0.5fr;
+    grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
     gap: 10px;
     align-items: center;
-    text-align: center;
-
+    margin: 0;
+    justify-items: start;
     padding: 1rem;
   }
 }

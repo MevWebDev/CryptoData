@@ -14,7 +14,7 @@ function Navbar({ handleCurrencyChange }: NavbarProps) {
           Crypto<span className="text-[#4c82fb]  ">Data</span>
         </h1>
       </Link>
-      <div className="md:flex gap-6 text-lg hidden">
+      <div className="md:flex gap-6 text-lg hidden hover:">
         <button>Features</button>
         <button>Pricing</button>
         <button>Blog</button>
@@ -22,7 +22,8 @@ function Navbar({ handleCurrencyChange }: NavbarProps) {
 
       <div className="flex gap-3 items-center ">
         <select
-          className="px-3 py-2 rounded-lg text-white  bg-[#131a2a]"
+          name="select-currency"
+          className="px-3 py-2 rounded-lg text-white  bg-[#131a2ada] hover:bg-[#1d273a] font-satoshi-bold cursor-pointer"
           value={currency.name}
           onChange={handleCurrencyChange}
         >
@@ -31,7 +32,9 @@ function Navbar({ handleCurrencyChange }: NavbarProps) {
           <option value="gbp">GBP</option>
           <option value="pln">PLN</option>
         </select>
-        <button className="rounded-lg bg-[#4c82fb] px-3 py-2">Sign up</button>
+        <button className=" font-satoshi-bold rounded-lg bg-[#4c82fb] hover:bg-[#3573f8] px-3 py-2">
+          Sign up
+        </button>
       </div>
     </div>
   );
