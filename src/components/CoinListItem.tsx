@@ -18,10 +18,16 @@ function CoinListItem({
   id,
 }: CoinListItemProps) {
   const percentage = change.toFixed(2);
-  const formattedPrice = price.toLocaleString(undefined, {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
-  });
+  const formattedPrice =
+    price >= 1
+      ? price.toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        })
+      : price.toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 5,
+        });
   const formattedMCap = mcap.toLocaleString(undefined, {
     minimumFractionDigits: 0,
     maximumFractionDigits: 3,
