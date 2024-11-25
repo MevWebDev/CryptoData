@@ -56,15 +56,15 @@ const HistoricalChart = ({
     setDays(Number(event.target.value));
   }
   return (
-    <div className="p-1 relative font-satoshi-regular w-11/12 md:w-1/3 max-h-80 mx-auto mt-8 flex items-center gap-1 flex-col">
+    <div className="p-1 relative font-satoshi-regular w-11/12 md:w-1/3 max-h-80 mx-auto mt-8 flex items-center flex-col">
       <select
-        className="md:px-3 md:py-2  absolute left-[5%] top-[5%] rounded-lg text-white  bg-transparent"
+        className="md:px-3 md:py-2 mb-4 self-start rounded-lg text-white  bg-[#4c82fb]"
         onChange={handleSetDays}
       >
-        <option value="30">30</option>
-        <option value="90">90</option>
-        <option value="180">180</option>
-        <option value="365">365</option>
+        <option value="30">30 days</option>
+        <option value="90">90 days</option>
+        <option value="180">180 days</option>
+        <option value="365">365 days</option>
       </select>
       <Line
         className="rounded-xl"
