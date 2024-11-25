@@ -22,6 +22,7 @@ function Navbar({ handleCurrencyChange }: NavbarProps) {
 
       <div className="flex gap-3 items-center ">
         <select
+          aria-label="select-currency"
           name="select-currency"
           className="px-3 py-2 rounded-lg text-white  bg-[#131a2ada] hover:bg-[#1d273a] font-satoshi-bold cursor-pointer"
           value={currency.name}

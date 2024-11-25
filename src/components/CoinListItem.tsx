@@ -51,7 +51,7 @@ function CoinListItem({
           </div>
         </div>
 
-        <p>
+        <p className=" md:justify-self-start">
           {formattedPrice}&nbsp;{currency.symbol}
         </p>
         <p className={`${color(percentage)}`}>{percentage}%</p>

@@ -58,6 +58,7 @@ const HistoricalChart = ({
   return (
     <div className="p-1 relative font-satoshi-regular w-11/12 md:w-1/3 max-h-80 mx-auto mt-8 flex items-center flex-col">
       <select
+        aria-label="select-day-range"
         name="select-day-range"
         className="px-2 py-1 md:px-3 md:py-2 mb-4 self-start rounded-lg text-white  bg-[#4c82fb] hover:bg-[#3573f8] font-satoshi-bold"
         onChange={handleSetDays}
