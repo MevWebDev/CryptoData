@@ -118,7 +118,10 @@ function Coin() {
 
   if (!coinData || !chartData) return <Loading />;
 
-  function formatNumber(number: number) {
+  function formatNumber(number: number | undefined | null): string {
+    if (number === undefined || number === null) {
+      return "N/A";
+    }
     return number.toLocaleString(undefined, {
       minimumFractionDigits: 0,
       maximumFractionDigits: 3,
