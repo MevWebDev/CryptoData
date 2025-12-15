@@ -17,7 +17,7 @@ function CoinListItem({
   currency,
   id,
 }: CoinListItemProps) {
-  const percentage = change.toFixed(2);
+  const percentage = change?.toFixed(2);
   const formattedPrice =
     price >= 1
       ? price.toLocaleString(undefined, {
@@ -40,7 +40,7 @@ function CoinListItem({
   return (
     <Link to={`/coin/${id}`} state={{ currency }}>
       <div className="coin-grid text-md  bg-[#131a2a] hover:bg-[#131a2abd]">
-        <p>{index}</p>
+        <p>{index}</p>git@github.com:MevWebDev/CryptoData.git
         <div className="flex gap-3 items-center">
           <img
             src={image}
@@ -56,7 +56,6 @@ function CoinListItem({
             </span>
           </div>
         </div>
-
         <p className=" md:justify-self-start">
           {formattedPrice}&nbsp;{currency.symbol}
         </p>
