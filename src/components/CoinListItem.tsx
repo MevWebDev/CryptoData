@@ -17,7 +17,7 @@ function CoinListItem({
   currency,
   id,
 }: CoinListItemProps) {
-  const percentage = change?.toFixed(2);
+  const percentage = (change || 0).toFixed(2);
   const formattedPrice =
     price >= 1
       ? price.toLocaleString(undefined, {
